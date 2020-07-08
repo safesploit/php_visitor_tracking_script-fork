@@ -7,7 +7,7 @@
 <?php
 function logIP()
 {
-     $ipLog="logfile.txt"; // Your logfiles name here (.txt or .html extensions ok)
+     $ipLog="logfile.htm"; // Your logfiles name here (.txt or .html extensions ok)
      $agent = $_SERVER['HTTP_USER_AGENT'];
      $reffered = $_SERVER['HTTP_REFERER'];
      
