@@ -1,20 +1,19 @@
 <html>
 <head></head>
 <body>
-<center><h1>:)</h1></center>
+<center></center>
  <img src="giphy.gif" alt="You didn't" height=auto width=100%> 
 
 <?php
 function logIP()
 {
-     $ipLog="logfile.htm"; // Your logfiles name here (.txt or .html extensions ok)
+     $ipLog="mylogfile.txt"; // Your logfiles name here (.txt or .html extensions ok)
      $agent = $_SERVER['HTTP_USER_AGENT'];
      $reffered = $_SERVER['HTTP_REFERER'];
      
      if (isset($_GET['link'])) {
           $param=$_GET['link'];
      } else {
-         continue;
      }
      
      // IP logging
@@ -23,12 +22,11 @@ function logIP()
      else $ip = $_SERVER['REMOTE_ADDR'];
      $date=date ("l dS of F Y h:i:s A");
      $log=fopen("$ipLog", "a+");
-     if (preg_match("/\\bhtm\\b/i", $ipLog) || preg_match("/\\bhtml\\b/i", $ipLog))
+     $pattern = "/\btxt\b/i"; // only txt files
+     if (preg_match($pattern, $ipLog))
      {
-          fputs($log, "<span style={color;red;}>Logged IP address: $ip </span> <br> User-Agent: $agent <br> Reffered by: $reffered <br> Parameter: $param <br>Date logged: $date<br><br>");
+          fputs($log, "Logged IP address: $ip User-Agent: $agent  Reffered by: $reffered Parameter: $param Date logged: $date\n ");
      }
-     else fputs($log, "<span style={color;red;}>Logged IP address: $ip </span> <br> User-Agent: $agent <br> Reffered by: $reffered <br> Parameter: #param <br>Date logged: $date\
-");
      fclose($log);
 }
 // Place the below function call wherever you want the script to fire.
