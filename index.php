@@ -1,18 +1,12 @@
-<html>
-<head></head>
-<body>
-<center></center>
- <img src="giphy.gif" alt="You didn't" height=auto width=100%> 
-
 <?php
 function logIP()
 {
-     $ipLog="mylogfile.txt"; // Your logfiles name here (.txt or .html extensions ok)
+     $ipLog="mylogfile.txt"; // Your logfiles name here (.txt or ok. Avoid HTML and XSS attacks)
      $agent = $_SERVER['HTTP_USER_AGENT'];
      $reffered = $_SERVER['HTTP_REFERER'];
      
-     if (isset($_GET['link'])) {
-          $param=$_GET['link'];
+     if (isset($_GET['s'])) {
+          $param=$_GET['s'];
      } else {
      }
      
@@ -31,7 +25,7 @@ function logIP()
 }
 // Place the below function call wherever you want the script to fire.
 logIp();
+header( "Location: https://www.google.com", TRUE, 301 );
 ?>
-
 </body>
 </html>
