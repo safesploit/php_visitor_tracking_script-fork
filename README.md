@@ -1,5 +1,7 @@
 # Watcher
 
+The Watcher fork has been moved [here](https://github.com/safesploit/Watcher) due to combining different contributions and forks.
+
 Watcher tracks referrer page, IP address, date/time and user agent data before discreetly redirecting to the indended URL.
 
 # Setup
