@@ -26,7 +26,16 @@ Alternatively the shorter form `http://localhost:8080/?s=safesploit.com` can be 
 
 # Example log
 
-    Logged IP address: 127.0.0.1 User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36  Reffered by:  Parameter: safesploit.com Date logged: Friday 29th 2022f July 2022 07:33:38 PM
+`Logged IP address: 127.0.0.1 User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36  Reffered by:  Parameter: safesploit.com Date logged: Friday 29th 2022f July 2022 07:33:38 PM`
+
+## Watcher v1.1.0 
+Since v1.1.0 full URLs can be provided via the `s` parameter without significant issue
+
+`Logged IP address: 127.0.0.1, User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36, Referred by: , Parameter: https://www.safesploit.com, Date logged: Saturday 30th 2022f July 2022 05:56:57 PM`
+
+The supplied URL is as follows:
+
+    http://localhost:8080/index.php?s=https://www.safesploit.com
 
 
 ## Potential Issues
